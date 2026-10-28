@@ -1,39 +1,32 @@
-# blog
+# 浩宇的技术博客（纯静态）
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+纯 HTML + CSS + JavaScript 实现的个人博客，可部署到 Gitee Pages。
 
-#### 软件架构
-软件架构说明
+## 页面结构
+- index.html —— 首页（简介、栏目入口、最新文章）
+- category.html —— 分类栏目页（?cat=docker / flask / notes 三栏目共用）
+- article.html —— 文章详情页（?id=文章id）
+- archive.html —— 归档页（按年份汇总）
+- about.html —— 关于我（个人介绍、技能栈）
 
+## 如何新增文章
+打开 `js/articles.js`，往 `ARTICLES` 数组里加一个对象即可，首页、栏目页、归档页会自动更新：
 
-#### 安装教程
+```js
+{
+  id: "flask-03",            // 唯一 ID，用于详情页链接
+  category: "flask",         // docker / flask / notes 三选一
+  title: "文章标题",
+  date: "2026-11-01",
+  tags: ["Python"],
+  summary: "一句话摘要",
+  content: "<h2>支持 HTML</h2><p>正文写在这里</p>"
+}
+```
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+## 部署到 Gitee Pages
+1. 在 Gitee 新建仓库，把本目录所有文件推上去（注意 Gitee Pages 默认入口是 `index.html`，位于仓库根目录）。
+2. 仓库 → 服务 → Gitee Pages → 部署分支选 `master`，目录选 `/`，点"启动"。
+3. 访问 `https://用户名.gitee.io/仓库名` 即可。
 
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+> 提示：Gitee Pages 需要实名认证；更新文章后需在 Pages 页面手动点"更新"重新部署。

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分类栏目 - 浩宇的技术博客</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a class="logo" href="index.html">浩宇<span>.blog</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">首页</a></li>
+        <li><a href="category.html?cat=docker">Docker &amp; Linux</a></li>
+        <li><a href="category.html?cat=flask">Flask 笔记</a></li>
+        <li><a href="category.html?cat=notes">心得随笔</a></li>
+        <li><a href="archive.html">归档</a></li>
+        <li><a href="about.html">关于我</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="cat-header">
+      <div class="big-icon" id="cat-icon">🐳</div>
+      <h1 id="cat-name">Docker &amp; Linux 技术文章</h1>
+      <p id="cat-desc">容器化与 Linux 运维的学习记录</p>
+      <div class="tabs">
+        <button class="tab-btn" data-cat="docker" onclick="location.href='category.html?cat=docker'">🐳 Docker &amp; Linux</button>
+        <button class="tab-btn" data-cat="flask" onclick="location.href='category.html?cat=flask'">🐍 Flask 笔记</button>
+        <button class="tab-btn" data-cat="notes" onclick="location.href='category.html?cat=notes'">✍️ 心得随笔</button>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="post-grid" id="cat-list"></div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 宋浩宇 · 用 Gitee Pages 托管的纯静态博客</p>
+    </div>
+  </footer>
+
+  <script src="js/articles.js"></script>
+  <script src="js/main.js"></script>
+  <script>renderCategory();</script>
+</body>
+</html>
